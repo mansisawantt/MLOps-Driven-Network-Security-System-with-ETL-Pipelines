@@ -1,3 +1,4 @@
+
 import os
 import sys
 import json
@@ -57,4 +58,23 @@ if __name__=='__main__':
     print(records)
     no_of_records=networkobj.insert_data_mongodb(records,DATABASE,Collection)
     print(no_of_records)
-        
+
+    
+
+    '''     
+#Try database is empty of not
+
+import pymongo
+
+MONGO_DB_URL = "mongodb+srv://mansisawantds:Mongodbatlas@cluster0.7e5zc.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+
+client = pymongo.MongoClient(MONGO_DB_URL)
+db = client["MANASI"]  # Use the corrected database name
+collection = db["NetworkData"]  # Use the correct collection name
+
+count = collection.count_documents({})
+print(f"📊 Total documents in '{collection.name}': {count}")
+
+if count == 0:
+    print("⚠️ No data found! Try reinserting data using `push_data.py`.")
+'''
